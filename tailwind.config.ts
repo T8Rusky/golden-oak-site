@@ -1,32 +1,29 @@
-
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}"
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
       colors: {
         oak: {
-          gold: "#CDAA6A",     // warm gold
-          goldDark: "#9B7A44",
-          leaf: "#4A7C59",     // warm green
-          leafDark: "#2F6041",
-          cream: "#FAF7F2",    // soft background
-          ink: "#23313A"       // deep ink text
-        }
+          blue: "#0D47A1",      // deep accent (buttons/links)
+          blueDark: "#08306b",
+          gold: "#CDAA6A",      // headings/emphasis
+          goldDark: "#A67C43",
+          ink: "#1F2937",       // text (gray-800)
+          inkSoft: "#4B5563",   // text secondary (gray-600)
+          cream: "#F3F4F6",     // section background (very light gray)
+          white: "#FFFFFF",
+        },
       },
       boxShadow: {
-        soft: "0 10px 30px rgba(0,0,0,0.06)"
+        card: "0 10px 30px rgba(0,0,0,0.06)",
       },
       borderRadius: {
-        xl2: "1rem"
-      }
-    }
+        xl2: "1rem",
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
-
 export default config;

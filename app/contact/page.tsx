@@ -80,7 +80,7 @@ const PHONE_TEL = "+447477667813"; // international format
           </div>
 
           <p className="mt-4 text-sm text-black/60">
-            Prefer a call back? Email us your name & number — we’ll ring you.
+            Prefer a call back? Email us your name & number we’ll ring you.
           </p>
         </div>
       </div>
