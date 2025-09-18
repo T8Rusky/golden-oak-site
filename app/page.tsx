@@ -7,7 +7,7 @@ import {
   Users,
   ShieldCheck,
   HeartHandshake,
-  ShoppingCart,
+  Car, // Changed from ShoppingCart to Car
 } from "lucide-react";
 
 export default function HomePage() {
@@ -127,19 +127,22 @@ function WhyUs() {
 function ServicesPreview() {
   const services = [
     {
-      title: "Companionship",
+      title: "Companionship & Social Interaction",
       desc: "Friendly conversation, social outings, games & hobbies.",
       icon: <Users size={40} className="text-oak-gold" />,
+      image: "/images/companionship.jpg",
     },
     {
-      title: "Home Help",
+      title: "Transportation & Errands",
+      desc: "Accompanied appointments, grocery shopping & prescription collections.",
+      icon: <Car size={40} className="text-oak-gold" />,
+      image: "/images/transportation.jpg",
+    },
+    {
+      title: "General Home Help",
       desc: "Light cleaning, laundry, tidying & organisation.",
       icon: <Home size={40} className="text-oak-gold" />,
-    },
-    {
-      title: "Food & Shopping",
-      desc: "Meal prep, cooking support & groceries.",
-      icon: <ShoppingCart size={40} className="text-oak-gold" />,
+      image: "/images/home-help.jpg",
     },
   ];
 
@@ -149,15 +152,33 @@ function ServicesPreview() {
         <h2 className="mb-12 text-3xl md:text-4xl font-bold text-oak-blue">
           Our Core Services
         </h2>
-        <div className="grid gap-8 md:grid-cols-3">
-          {services.map((s) => (
+        <div className="grid gap-12 lg:gap-16">
+          {services.map((s, index) => (
             <div
               key={s.title}
-              className="card flex flex-col items-center p-6 text-center transition-shadow hover:shadow-card"
+              className={`flex flex-col gap-8 md:flex-row md:items-center ${index % 2 !== 0 ? 'md:flex-row-reverse' : ''}`}
             >
-              <div className="mb-4">{s.icon}</div>
-              <h3 className="text-2xl font-semibold">{s.title}</h3>
-              <p className="mt-2 text-oak-inkSoft">{s.desc}</p>
+              <div className="relative h-64 w-full md:h-80 md:w-1/2 rounded-lg overflow-hidden shadow-card">
+                <Image
+                  src={s.image}
+                  alt={s.title}
+                  layout="fill"
+                  objectFit="cover"
+                  className="transition-transform duration-300 hover:scale-105"
+                />
+              </div>
+              <div className="w-full text-center md:w-1/2 md:text-left">
+                <div className="flex items-center justify-center md:justify-start mb-4">
+                  {s.icon}
+                  <h3 className="ml-3 text-2xl md:text-3xl font-bold">{s.title}</h3>
+                </div>
+                <p className="mt-2 text-oak-inkSoft">{s.desc}</p>
+                <div className="mt-4">
+                  <Link href="/services" className="text-oak-blue hover:underline font-medium">
+                    Learn more →
+                  </Link>
+                </div>
+              </div>
             </div>
           ))}
         </div>

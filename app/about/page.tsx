@@ -1,6 +1,20 @@
+import Image from "next/image";
+
 export default function AboutPage() {
   return (
     <section className="section">
+      {/* New section for the full logo */}
+      <div className="container py-8 md:py-12 text-center">
+        <Image
+          src="/logo-full.png" // Assumes you have a logo-full.png in your public/ directory
+          alt="Golden Oak Services Limited Full Logo"
+          width={700}
+          height={700}
+          className="mx-auto w-auto h-40 md:h-56"
+          priority
+        />
+      </div>
+
       <div className="container grid gap-8 md:grid-cols-2 items-start">
         <div>
           <h1 className="text-3xl md:text-4xl font-bold">About Golden Oak</h1>
