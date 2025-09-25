@@ -77,7 +77,7 @@ function WhyUs() {
   const benefits = [
     {
       icon: <HeartHandshake size={48} className="text-oak-gold" />,
-      title: "One-to-One Care",
+      title: "One-to-One Support",
       description:
         "Consistent, dedicated companionship tailored to individual needs.",
     },
@@ -96,7 +96,7 @@ function WhyUs() {
     {
       icon: <ShieldCheck size={48} className="text-oak-gold" />,
       title: "Transparent Pricing",
-      description: "Simple, honest rates with no hidden fees (£25–£26/hr).",
+      description: "Simple, honest rates with no hidden fees (Starting from £26/hr).",
     },
   ];
 
